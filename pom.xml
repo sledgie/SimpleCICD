@@ -43,6 +43,9 @@
                     </execution>
                 </executions>
                 <configuration>
+                <!-- I added the line below -->
+                	<runtimeVersion>4.2.0</runtimeVersion>
+                <!-- The one on top -->
                     <coverage>
                         <runCoverage>true</runCoverage>
                         <formats>
