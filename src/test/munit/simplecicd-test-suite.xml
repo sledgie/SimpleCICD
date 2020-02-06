@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="simplecicd-test-suite.xml" />
+	<munit:test name="simplecicd-test-suite-simplecicdFlowTest" doc:id="55b64097-95b9-474e-801c-0c165a315e9d" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to simplecicdFlow" doc:id="6385d5c8-43e4-4956-8cad-a30481fb1f06" name="simplecicdFlow"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="e1bfd395-b0c3-4af9-b73d-bf02d0600d0f" actual="#[payload]" expected='#[{
+	"message": "Hello"
+}]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
